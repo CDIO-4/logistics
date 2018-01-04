@@ -1,6 +1,8 @@
 package com.cdio4.logistics.biz;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdio4.logistics.dao.SportAdminDAO;
+import com.cdio4.logistics.domain.SportAdmin;
 @Service("Sport_AdminBiz")
 public class Sport_AdminBiz {
 	@Autowired@Qualifier("SportAdminDAO")
@@ -23,9 +26,16 @@ public class Sport_AdminBiz {
 		this.sdao = sdao;
 	}
 	@Transactional(propagation=Propagation.REQUIRED,readOnly=true)
-	public void findById(String id) {
-			System.out.println("章显");
-		 System.out.println(sdao.findById(id).getAdminName());
+	public Map<String,Object>  findById(SportAdmin admin) {
+	Map<String,Object> map=new HashMap<String,Object>();
+	SportAdmin admin_biz = sdao.findById(admin.getAdminId());
+	if(admin_biz !=null){
+		map.put("admin",admin_biz);
+		map.put("login_result","yes" );
+	}else{
+		map.put("login_result", "no");
+	}
+        return map;
 	}
 
 }

@@ -23,9 +23,9 @@
 <body>
 	<div class="container w3layouts agileits" align="center"  style="margin-top:10%;">
 		<div align="center"  style="width:40%;">
-			<form action="#" method="post">
-				<input type="text" Name="Userame" placeholder="用户名" required>
-				<input type="password" Name="Password" placeholder="密码" required>
+			<form action="sport_admin/adminlogin" method="post">
+				<input type="text" Name="admin.adminId" placeholder="用户名" required>
+				<input type="password" Name="admin.adminPassword" placeholder="密码" required>
 			</form>
             <div class="tick w3layouts agileits" align="left">
 			<ul>

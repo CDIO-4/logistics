@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.cdio4.logistics.biz.Sport_AdminBiz;
+import com.cdio4.logistics.domain.SportAdmin;
 import com.opensymphony.xwork2.ActionSupport;
 @ParentPackage("struts-default")
 @Namespace("/sport_admin")
@@ -23,11 +24,19 @@ public class Sport_AdminAction extends ActionSupport implements SessionAware,
 RequestAware {
 	public Map<String, Object> request;
 	public Map<String, Object> session;
-	public String adminId;
+	public SportAdmin admin;
 	@Override
 	public void setRequest(Map<String, Object> request) {
 		// TODO Auto-generated method stub
 		this.request=request;
+	}
+
+	public SportAdmin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(SportAdmin admin) {
+		this.admin = admin;
 	}
 
 	@Override
@@ -45,18 +54,22 @@ RequestAware {
 	public void setAbiz(Sport_AdminBiz abiz) {
 		this.abiz = abiz;
 	}
-	public String getAdminId() {
-		return adminId;
-	}
-
-	public void setAdminId(String adminId) {
-		this.adminId = adminId;
-	}
+	
 	@Action(value = "adminlogin", results = {
-			@Result(name = "success", location = "/admin/login") })
+			@Result(name = "success", location = "/sport_admin/login.jsp"),
+			@Result(name = "error", location = "/sport_admin/login.jsp")
+			}
+	      
+			)
 	public String login(){
-		abiz.findById(adminId);
-		return "success";
+		Map<String, Object> map =abiz.findById(admin);
+		if(map.get("login_result").equals("yes")){
+			admin = (SportAdmin) map.get("admin");
+			session.put("SportAdmin", admin);
+			return "success";
+		}
+	request.put("login_result",map.get("login_result").toString());
+		return "error";
 	}
 
 	

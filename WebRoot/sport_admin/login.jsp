@@ -1,8 +1,24 @@
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>登录表单</title>
 
-/*-- Reset Code --*/
+	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-	article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //Meta-Tags -->
+
+	<!-- Style --> <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+
+
+</head>
+<style type="text/css">
 	ol,ul{list-style:none;padding:0;margin:0;}
 	blockquote,q{quotes:none;}
 	blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
@@ -32,7 +48,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background: url("../images/background.jpg");
+    background: url("../sport_admin/assets/img/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -139,7 +155,7 @@ ul.tick li input[type="checkbox"]+label span:first-child {
 
 ul.tick li input[type="checkbox"]:checked+label span:first-child:before {
     content: "";
-    background: url(../images/tick.png)no-repeat;
+    background: url(../img/tick.png)no-repeat;
     position: absolute;
     left: 3px;
     top: 3px;
@@ -545,5 +561,37 @@ input[type="text"], input[type="password"] {
 }
 
 
+</style>
+<!-- //Head -->
 
-/*--- Responsive Code ---*/
+<!-- Body -->
+<body>
+	<div class="container w3layouts agileits" align="center"  style="margin-top:10%;">
+		<div align="center"  style="width:40%;">
+			<c:if test="${requestScope.login_result ne null }">
+           <span style="color:#fff">账号或密码错误</span>
+            </c:if>
+			<form action="adminlogin" method="post">
+				<input type="text" Name="admin.adminId" placeholder="用户名" required>
+				<input type="password" Name="admin.adminPassword" placeholder="密码" required>
+			<div class="tick w3layouts agileits" align="left">
+			<ul>
+				<li>
+					<input type="checkbox" id="brand1" value="">
+					<label for="brand1"><span style="color:#FFF">记住我</span></label>
+				</li>
+			</ul>
+            </div>
+            <div class="send-button w3layouts agileits">
+					<input type="submit" value="登 录">
+			</div>
+			<a href="#">记住密码?</a>
+			<div class="clear"></div>
+			</form>
+            
+		</div>
+        </div>
+</body>
+<!-- //Body -->
+
+</html>
