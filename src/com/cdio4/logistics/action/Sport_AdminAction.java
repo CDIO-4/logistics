@@ -58,9 +58,7 @@ RequestAware {
 	@Action(value = "adminlogin", results = {
 			@Result(name = "success", location = "/sport_admin/index.jsp"),
 			@Result(name = "error", location = "/sport_admin/login.jsp")
-			}
-	      
-			)
+			})
 	public String login(){
 		Map<String, Object> map =abiz.findById(admin);
 		if(map.get("login_result").equals("yes")){
