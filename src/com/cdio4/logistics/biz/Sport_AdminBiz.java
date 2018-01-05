@@ -33,7 +33,7 @@ public class Sport_AdminBiz {
 		map.put("admin",admin_biz);
 		map.put("login_result","yes" );
 	}else{
-		map.put("login_result", "no");
+		map.put("login_result","no");
 	}
         return map;
 	}

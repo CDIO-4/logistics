@@ -21,6 +21,9 @@ public class Car implements java.io.Serializable {
 
 	private String carId;
 	private String ifFree;
+	private String carModel;
+	private String description;
+	private String carState;
 	private String currrentspot;
 	private String carweight;
 	private String driverId;
@@ -40,12 +43,17 @@ public class Car implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Car(String carId, String ifFree, String currrentspot,
+	public Car(String carId, String carModel,
+			String description,String carState,
+			String ifFree, String currrentspot,
 			String carweight, String driverId, String driverphone,
 			String driveradress, Set<Transport> transports) {
 		this.carId = carId;
 		this.ifFree = ifFree;
 		this.currrentspot = currrentspot;
+		this.carModel=carModel;
+		this.carState= carState;
+		this.description = description;
 		this.carweight = carweight;
 		this.driverId = driverId;
 		this.driverphone = driverphone;
@@ -62,6 +70,30 @@ public class Car implements java.io.Serializable {
 
 	public void setCarId(String carId) {
 		this.carId = carId;
+	}
+	@Column(name = "car_model", length = 30)
+	public String getCarModel() {
+		return carModel;
+	}
+
+	public void setCarModel(String carModel) {
+		this.carModel = carModel;
+	}
+	@Column(name = "description", length = 255)
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	@Column(name = "car_state", length = 20)
+	public String getCarState() {
+		return carState;
+	}
+
+	public void setCarState(String carState) {
+		this.carState = carState;
 	}
 
 	@Column(name = "ifFree", length = 5)

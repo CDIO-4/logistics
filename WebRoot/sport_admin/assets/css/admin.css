@@ -86,13 +86,13 @@ gallery.html css
 */
 
 .page-404{background: #fff;border: none;width: 200px;margin: 0 auto}
-.sideMenu{padding: 0px;margin: 0px }
+.sideMenu{padding: 0px;margin-left: 0px ;font-size: 17px;}
 .sideMenu h3{height: 32px;line-height: 32px;color: #aeb2b7;cursor: pointer;padding: 0 0 0 10px;margin: 20px 0 0 0;border-top-left-radius: 3px;border-top-right-radius: 3px;font-weight: 400;width: 100% }
 .sideMenu h3 em{float: right;display: block;width: 40px;height: 32px;background: url(../i/icoAdd.png) 16px 12px no-repeat;cursor: pointer}
 .sideMenu h3.on em{background-position: 16px -57px}
 .sideMenu h3.on{color: #ff6c60;background: #35404d}
 .sideMenu h3 a{color: #aeb2b7 }
-.sideMenu ul{line-height: 24px;color: #999;display: none;/* 默认都隐藏 */ ;background: #35404d;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;padding: 0px 0 10px 0;margin: 0px }
+.sideMenu ul{font-size: 15px;line-height: 24px;color: #999;display: none;/* 默认都隐藏 */ ;background: #35404d;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;padding: 0px 0 10px 0;margin-left: 10px }
 .sideMenu li{text-indent: 25px;width: 100%}
 .sideMenu li{text-indent: 25px;width: 100%}
 .sideMenu li a{color: #aeb2b7}
@@ -110,7 +110,7 @@ gallery.html css
 .admin-biaoge .xinxitj{font-size: 16px;line-height: 35px;border-bottom: solid 1px #c9cdd7;margin-bottom: 10px}
 .admin-biaoge .am-table>thead>tr>th{text-align: center}
 .admin-biaoge .am-table{background-color: #FFF;padding: 3px;border-radius: 3px;text-align: center}
-.admin-biaogelist{background-color: #f1f2f7;position:fixed;right:0;bottom:0;top:85px;left:210px; overflow-y:auto; overflow-x: hidden; }
+.admin-biaogelist{background-color: #f1f2f7;position:fixed;width:100%;height:100%; overflow-y:auto; overflow-x: hidden; }
 
 
 
@@ -179,14 +179,14 @@ gallery.html css
 .admin-biaogelist .am-btn-group{z-index: 999}
 .admin-fbneirong{width: 98%;font-size: 14px;margin: 1% auto;background-color: #fff;border-radius: 3px; min-height: 600px;}
 
-.fbneirong{width: 98%;margin: 0 auto 15px auto;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding: 20px; font-size: 14px; background-color: #fff; min-height: 700px;}
+.fbneirong{font-size: 16px;width: 98%;margin: 0 auto 15px auto;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding: 20px; font-size: 14px; background-color: #fff; min-height: 700px;}
 
-.fbneirong .am-form-group{margin: 2px auto;width: 100%;}
+.fbneirong .am-form-group{margin: 20px auto;width: 100%;margin-left: 280px;font-size: 17px;}
 
 
-.fbneirong .zuo{width: 10%;text-align: right;margin-right: 1%;float: left;line-height: 33px;margin-bottom: 10px}
-.fbneirong .you{width: 70%;float: left;margin-bottom: 10px}
-.fbneirong .you .am-input-sm{font-size: 1.2rem!important}
+.fbneirong .zuo{width: 10%;text-align: right;margin-right: 1%;float: left;line-height: 33px;margin-bottom: 10px;margin-top: 6px;}
+.fbneirong .you{width: 30%;float: left;margin-bottom: 10px}
+.fbneirong .you .am-input-sm{font-size: 1.6rem!important}
 .fbneirong .you .am-btn-success,.fbneirong .you .am-btn-secondary{font-size: 1.4rem!important; padding: .65rem 1rem;}
 
 
@@ -194,7 +194,7 @@ gallery.html css
 .xitong .zuo{width: 10%;margin-right: 1%;float: left;line-height: 33px;margin-bottom: 10px}
 .xitong .you{width: 89%;float:left;margin-bottom: 10px}
 .xitong .you .am-input-sm{font-size: 1.2rem!important}
-.xitong .am-form-group{margin: 2px auto; clear: both;}
+.xitong .am-form-group{margin: 10px auto; clear: both;}
 
 
 
