@@ -2,10 +2,13 @@ package com.cdio4.logistics.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Projections;
 
 import static org.hibernate.criterion.Example.create;
 
@@ -14,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cdio4.logistics.domain.PageBean;
 import com.cdio4.logistics.domain.Route;
 
 /**
@@ -171,8 +175,27 @@ public class RouteDAO {
 			throw re;
 		}
 	}
-
+	public int getTotalRows(DetachedCriteria dc){
+		int num=0;
+		//对象封装查询对象
+		Criteria cri=dc.getExecutableCriteria(this.getCurrentSession());
+		//求总行数
+		cri.setProjection(Projections.rowCount());
+		List list=cri.list();
+		if(list.size()>0 ){
+			num=Integer.parseInt(list.get(0).toString());
+		}		
+		return num;
+	}
+	public void splitPage(DetachedCriteria dc,PageBean pb){
+		Criteria cri=dc.getExecutableCriteria(this.getCurrentSession());
+		cri.setFirstResult((pb.getCurrentPage()-1)*pb.getPageSize());
+		cri.setMaxResults(pb.getPageSize());
+		pb.setList(cri.list());
+	}
+	
 	public static RouteDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (RouteDAO) ctx.getBean("RouteDAO");
 	}
+	
 }

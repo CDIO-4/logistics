@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%String path=request.getContextPath(); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -28,35 +28,13 @@
     
     <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;font-size: 17px;"> 欢迎系统管理员：清风抚雪</div>
     <div class="sideMenu">
-      <h3 class="am-icon-flag"><em></em> <a href="#">订单管理</a></h3>
+      <h3 class="am-icon-flag"><em></em> <a href="#">配送点管理</a></h3>
       <ul>
-        <li><a href="login.jsp" target="show">生成订单</a></li>
-        <li><a href="login.jsp" target="show">查询订单</a></li>
-        <li><a href="login.jsp" target="show">订单配送</a></li>
-        <li><a href="login.jsp" target="show">订单接收</a></li>
+        <li><a href="login.jsp" target="show">新增配送点</a></li>
+        <li><a href="login.jsp" target="show">配送点列表</a></li>
+     
       </ul>
      
-      <h3 class="am-icon-users"><em></em> <a href="#">路线管理</a></h3>
-      <ul>
-        <li><a href="route_add.jsp" target="show">新增路线</a> </li>
-        <li><a href="route_Page.action" target="show">删除路线</a></li>
-        <li><a href="login.jsp" target="show">查找路线</a></li>
-      </ul>
-       <h3 class="am-icon-cart-plus"><em></em> <a href="#"> 车辆管理</a></h3>
-      <ul>
-        <li><a href="CarList" target="show">车辆列表</a></li>
-        <li><a href="car_add.jsp" target="show">新增车辆</a></li>
-        
-      </ul>
-      <h3 class="am-icon-volume-up"><em></em> <a href="#">数据统计</a></h3>
-      <ul>
-        <li><a href="login.jsp" target="show">生成报表</a> </li>
-      </ul>
-      <h3 class="am-icon-gears"><em></em> <a href="#">问题订单处理</a></h3>
-      <ul>
-        <li><a href="login.jsp" target="show">修改订单信息</a></li>
-        <li><a href="login.jsp" target="show">重新派送</a></li>
-      </ul>
     </div>
     <!-- sideMenu End --> 
     

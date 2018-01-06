@@ -3,10 +3,13 @@ package com.cdio4.logistics.dao;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Criteria;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Projections;
 
 import static org.hibernate.criterion.Example.create;
 
@@ -16,6 +19,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdio4.logistics.domain.Sport;
+import com.cdio4.logistics.domain.PageBean;
 
 /**
  * A data access object (DAO) providing persistence and search support for Sport
@@ -100,7 +104,7 @@ public class SportDAO {
 		}
 	}
 
-	public List findByProperty(String propertyName, Object value) {
+	public List<Sport> findByProperty(String propertyName, Object value) {
 		log.debug("finding Sport instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
@@ -178,8 +182,5 @@ public class SportDAO {
 			throw re;
 		}
 	}
-
-	public static SportDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (SportDAO) ctx.getBean("SportDAO");
-	}
+	
 }

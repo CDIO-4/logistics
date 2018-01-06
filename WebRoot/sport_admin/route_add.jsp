@@ -29,9 +29,10 @@ p{
 color:red;
 font-size: 13px;
 position:relative;
-left:105%;
+left:360px;
 top:-38px;
 display:none;
+
 }
 span{
 color:red;
@@ -82,87 +83,29 @@ function checknull() {
 
 					<dl class="am-icon-home" style="float: right;">
 						当前位置： 首页 >
-						<a href="#">新增车辆</a>
+						<a href="#">新增路线</a>
 					</dl>
-
-一USU盾噢is激动剂喜欢的
-
 				</div>
 
 				<div class="fbneirong">
-					<form class="am-form" action="addCar" method="post" onSubmit="return checknull();">
+					<form class="am-form" action="route_add" method="post" onSubmit="return checknull();">
 						<div class="am-form-group am-cf">
-							<div class="zuo">车牌号：</div>
+							<div class="zuo">目的地：</div>
 							<div class="you">
-								<input  type="text" name="car.carId" value="${session.car.carId }" class="am-input-sm" id="doc-ipt-email-1"
-									placeholder="如：冀D ZX0001">
+								<input  type="text" name="route.lineEnd" class="am-input-sm" id="doc-ipt-email-1"
+									placeholder="市级地点如：北京">
 									<p>该项不可为空!</p>
 							</div>
 						</div>
 						<div class="am-form-group am-cf">
-							<div class="zuo">车型：</div>
+							<div class="zuo">距离：</div>
 							<div class="you">
-								<input type="text" name="car.carModel" value="${session.car.carModel }" class="am-input-sm" id="doc-ipt-pwd-1"
-									placeholder="请输具体车型">
+								<input type="text" name="route.lineDistance" class="am-input-sm" id="doc-ipt-pwd-1"
+									placeholder="单位为kg">
 									<p>该项不可为空!</p>
 							</div>
 						</div>
 						<div class="am-form-group am-cf">
-							<div class="zuo">车辆描述：</div>
-							<div class="you">
-								<textarea name="car.description"  class="am-input-sm" rows="3" id="doc-ta-1">${session.car.description }</textarea>
-								<span>该项不可为空!</span>
-							</div>
-						</div>
-						<div class="am-form-group am-cf">
-							<div class="zuo">车重：</div>
-							<div class="you">
-								<input type="text" value="${session.car.carweight }" name="car.carweight" class="am-input-sm" id="doc-ipt-file-1" placeholder="必填：单位为吨（T）">
-								<p>该项不可为空!</p>
-							</div>
-						</div>
-						<div class="am-form-group am-cf">
-							<div class="zuo">所属站点：</div>
-							<div class="you">
-								<input type="text" value="${session.car.currrentspot }" name="car.carweight" class="am-input-sm" id="doc-ipt-file-1" placeholder="必填：单位为吨（T）">
-								<p>该项不可为空!</p>
-							</div>
-						</div>
-
-						<div class="am-form-group2 am-cf">
-							<div class="zuo">车况：</div>
-							<div class="you" style="height: 45px;">
-								<input name="car.carState" value="${session.car.carState }" class="am-input-sm" type="text"  placeholder="必填：优秀/良好/修理中" id="doc-ipt-file-1">
-								<p>该项不可为空!</p>
-							</div>
-						</div>
-
-
-						<div class="am-form-group2 am-cf">
-							<div class="zuo">司机姓名：</div>
-							<div class="you">
-								<input  placeholder="必填" value="${session.car.driverId }" name="car.driverId" class="am-input-sm" type="text" id="doc-ipt-file-1">
-								<p>该项不可为空!</p>
-							</div>
-						</div>
-
-						<div class="am-form-group2 am-cf">
-							<div class="zuo">司机电话：</div>
-							<div class="you">
-								<input  placeholder="必填" value="${session.car.driverphone }" name="car.driverphone" class="am-input-sm" type="text" id="doc-ipt-file-1">
-								<p>该项不可为空!</p>
-							</div>
-						</div>
-
-
-						<div class="am-form-group2 am-cf">
-							<div class="zuo">司机住址：</div>
-							<div class="you">
-								<input name="car.driveradress"  value="${session.car.driveradress }" placeholder="必填" class="am-input-sm" type="text" id="doc-ipt-file-1">
-								<p>该项不可为空</p>
-							</div>
-						</div>
-						<div class="am-form-group2 am-cf">
 							<div class="you" style="margin-left: 11%;">
 								<button type="submit"  class="am-btn am-btn-success am-radius">保存车辆信息</button>
 								&nbsp; &raquo; &nbsp;

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project adv-config="true">
+<<<<<<< HEAD
   <add-on id="hibernate.extra"/>
   <add-on id="spring.persistence"/>
   <add-on id="spring.web"/>
   <add-on id="web.struts2.spring"/>
+=======
+  <add-on id="spring.web"/>
+  <add-on id="hibernate.extra"/>
+  <add-on id="web.struts2.spring"/>
+  <add-on id="spring.persistence"/>
+>>>>>>> faeeff346878ce7028d4df88193486e9845c3ca9
   <container path="com.genuitec.runtime.library/com.genuitec.struts_2.1">
     <disable name="antlr-2.7.2.jar" type="jar"/>
   </container>

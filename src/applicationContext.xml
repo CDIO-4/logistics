@@ -46,7 +46,8 @@
 				<value>com.cdio4.logistics.domain.Route</value>
 				<value>com.cdio4.logistics.domain.Sport</value>
 				<value>com.cdio4.logistics.domain.Transport</value>
-				<value>com.cdio4.logistics.domain.LostOrder</value></list>
+				<value>com.cdio4.logistics.domain.LostOrder</value>
+				<value>com.cdio4.logistics.domain.Supreadmin</value></list>
 		</property></bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
@@ -110,6 +111,12 @@
 	</bean>
 	<bean id="LostOrderDAO"
 		class="com.cdio4.logistics.dao.LostOrderDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SupreadminDAO"
+		class="com.cdio4.logistics.dao.SupreadminDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
