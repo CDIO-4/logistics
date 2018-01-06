@@ -68,7 +68,7 @@
 .table-main{font-size: 1.4rem;padding: .5rem}
 .table-main button{background: #fff}
 .table-check{width: 30px}
-.table-id{width: 50px}
+.table-id{width: 150px}
 
 @media only screen and (max-width: 640px){.table-select{margin-top: 10px;margin-left: 5px}
 }
@@ -181,11 +181,11 @@ gallery.html css
 
 .fbneirong{font-size: 16px;width: 98%;margin: 0 auto 15px auto;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding: 20px; font-size: 14px; background-color: #fff; min-height: 700px;}
 
-.fbneirong .am-form-group{margin: 20px auto;width: 100%;margin-left: 280px;font-size: 17px;}
+.fbneirong .am-form-group{margin: 20px auto;width: 100%;margin-left: 0px;font-size: 17px;}
 
-
-.fbneirong .zuo{width: 10%;text-align: right;margin-right: 1%;float: left;line-height: 33px;margin-bottom: 10px;margin-top: 6px;}
-.fbneirong .you{width: 30%;float: left;margin-bottom: 10px}
+.fbneirong .am-form-group2{margin: 20px auto;width: 100%;top:-400px;position:relative;margin-left: 600px;font-size: 17px;}
+.fbneirong .zuo{width: 10%;text-align: right;margin-right: 1%;float: left;line-height: 33px;margin-bottom: 10px;margin-top: 6px;color:#76687b}
+.fbneirong .you{width: 25%;float: left;margin-bottom: 10px}
 .fbneirong .you .am-input-sm{font-size: 1.6rem!important}
 .fbneirong .you .am-btn-success,.fbneirong .you .am-btn-secondary{font-size: 1.4rem!important; padding: .65rem 1rem;}
 

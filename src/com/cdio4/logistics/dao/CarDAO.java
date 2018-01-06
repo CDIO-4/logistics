@@ -1,12 +1,16 @@
 package com.cdio4.logistics.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Criteria;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Projections;
 
 import static org.hibernate.criterion.Example.create;
 
@@ -16,6 +20,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdio4.logistics.domain.Car;
+import com.cdio4.logistics.domain.PageBean;
 
 /**
  * A data access object (DAO) providing persistence and search support for Car
@@ -51,6 +56,34 @@ public class CarDAO {
 
 	protected void initDao() {
 		// do nothing
+	}
+	public int getTotalRows(DetachedCriteria dc){
+		int num=0;
+		Criteria cri=dc.getExecutableCriteria(this.getCurrentSession());
+		cri.setProjection(Projections.rowCount());
+		List list=cri.list();
+		if(list.size()>0){
+			num=Integer.parseInt(list.get(0).toString());
+		}
+
+		return num;
+	}
+	public void getPageList(DetachedCriteria dc,PageBean pb){
+		List list=new ArrayList();
+		Criteria cri=dc.getExecutableCriteria(this.getCurrentSession());
+		cri.setFirstResult((pb.getCurrentPage()-1)*pb.getPageSize());
+		cri.setMaxResults(pb.getPageSize());
+		List lists=cri.list();
+		for(int i=0;i<lists.size();i++){
+			Car car=(Car) lists.get(i);
+			if(car.getIfFree().equals("true")){
+				car.setIfFree("是");
+			}else{
+				car.setIfFree("否");
+			}
+			list.add(car);
+		}
+		pb.setList(cri.list());
 	}
 
 	public void save(Car transientInstance) {

@@ -44,7 +44,7 @@
       </ul>
        <h3 class="am-icon-cart-plus"><em></em> <a href="#"> 车辆管理</a></h3>
       <ul>
-        <li><a href="login.jsp" target="show">车辆列表</a></li>
+        <li><a href="CarList" target="show">车辆列表</a></li>
         <li><a href="car_add.jsp" target="show">新增车辆</a></li>
         
       </ul>

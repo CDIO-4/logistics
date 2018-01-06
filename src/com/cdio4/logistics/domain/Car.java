@@ -25,7 +25,7 @@ public class Car implements java.io.Serializable {
 	private String description;
 	private String carState;
 	private String currrentspot;
-	private String carweight;
+	private Double carweight;
 	private String driverId;
 	private String driverphone;
 	private String driveradress;
@@ -46,7 +46,7 @@ public class Car implements java.io.Serializable {
 	public Car(String carId, String carModel,
 			String description,String carState,
 			String ifFree, String currrentspot,
-			String carweight, String driverId, String driverphone,
+			Double carweight, String driverId, String driverphone,
 			String driveradress, Set<Transport> transports) {
 		this.carId = carId;
 		this.ifFree = ifFree;
@@ -115,11 +115,11 @@ public class Car implements java.io.Serializable {
 	}
 
 	@Column(name = "carweight", length = 10)
-	public String getCarweight() {
+	public Double getCarweight() {
 		return this.carweight;
 	}
 
-	public void setCarweight(String carweight) {
+	public void setCarweight(Double carweight) {
 		this.carweight = carweight;
 	}
 
